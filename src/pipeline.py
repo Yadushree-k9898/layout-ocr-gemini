@@ -16,6 +16,16 @@ REQUIRED_FIELDS = [
 ]
 
 def run_pipeline(pdf_path: str, dpi: int = 300, model: str = "gemini-1.5-flash") -> Dict[str, Any]:
+    """
+    Main pipeline:
+    1. Convert PDF to images
+    2. Run OCR
+    3. Preprocess text
+    4. Convert pages to layout JSON
+    5. Extract structured data using GeminiExtractor
+    6. Merge missing fields
+    7. Normalize final output
+    """
     try:
         ocr = OCRService(OCRConfig(dpi=dpi))
         images = ocr.pdf_to_images(pdf_path)
@@ -27,6 +37,7 @@ def run_pipeline(pdf_path: str, dpi: int = 300, model: str = "gemini-1.5-flash")
         extractor = GeminiExtractor(model=model)
         full = extractor.extract_full(layout_json)
 
+        # Extract missing fields if any
         missing = [k for k in REQUIRED_FIELDS if not full.get(k)]
         if missing:
             per_field = extractor.extract_fields(layout_json, missing)
@@ -37,11 +48,13 @@ def run_pipeline(pdf_path: str, dpi: int = 300, model: str = "gemini-1.5-flash")
         final = normalize(merged)
         logging.info("Pipeline completed successfully")
         return final
+
     except Exception as e:
         logging.error(f"Pipeline failed: {e}")
         return {}
 
 def save_json(data: Dict[str, Any], out_path: str):
+    """Save dictionary data as JSON file"""
     import json
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)

@@ -6,16 +6,13 @@ logging.basicConfig(level=logging.INFO)
 
 def fix_common_misreads(text: str) -> str:
     t = text
-    # Numeric misreads
     t = re.sub(r'(?<=\d)O(?=\d)', '0', t)
     t = re.sub(r'(?<=\$)O(?=\d)', '0', t)
-    t = re.sub(r'(?<=NMLS\s*[#:]?\s*)O(?=\d)', '0', t, flags=re.I)
+    t = re.sub(r'(?<=NMLS[#:]?\s*)O(?=\d)', '0', t, flags=re.I)
     t = re.sub(r'\bI\b', '1', t)
     t = re.sub(r'\bl\b', '1', t)
     t = re.sub(r'\bS\b', '5', t)
-    # Money formatting
     t = re.sub(r'(?<!\$)(\b\d{1,3}(?:,\d{3})+(?:\.\d{2})?\b)', r'$\1', t)
-    # Typography
     t = t.replace('“', '"').replace('”', '"').replace('’', "'").replace('—', '-').replace('–', '-')
     return t.strip()
 

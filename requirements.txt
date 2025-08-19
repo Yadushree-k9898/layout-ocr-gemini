@@ -1,13 +1,13 @@
-# Core
+# OCR
 paddlepaddle==2.6.1 ; platform_system != "Darwin" or platform_machine != "arm64"
-# If you're on Apple Silicon and want CPU-only, uncomment the next line and comment the line above:
-# paddlepaddle==2.6.1 ; platform_system == "Darwin" and platform_machine == "arm64"
 paddleocr==2.7.0.3
 
+# PDF
 pdf2image==1.17.0
 Pillow==10.4.0
+pymupdf==1.22.5
 
-# LangChain + Gemini
+# AI / LangChain
 langchain==0.2.16
 google-generativeai==0.8.3
 langchain-google-genai==2.0.1
@@ -18,18 +18,7 @@ pydantic==2.9.2
 rapidfuzz==3.9.7
 dateparser==1.2.0
 rich==13.9.2
-tqdm==4.66.5c
+tqdm==4.66.5
 typer==0.12.5
 regex==2024.9.11
-paddleocr
-pdf2image
-pillow
-numpy
-tqdm
-python-dotenv
-langchain
-langchain-google-genai
-typer
-dateparser
-pymupdf  
-
+numpy==1.26.2
