@@ -3,9 +3,9 @@
     "HOWERTON ELIZABETH",
     "HOWERTON TRAVIS"
   ],
-  "loan_amount": "475950.00",
+  "loan_amount": 475950.0,
   "recording_date": "04/01/2025",
-  "recording_location": "ALBANYCOUNTY-STATE OFNEWYORK",
+  "recording_location": "Albany County, New York",
   "lender_name": "US MORTGAGE CORPORATION",
   "lender_nmls_id": null,
   "broker_name": null,
