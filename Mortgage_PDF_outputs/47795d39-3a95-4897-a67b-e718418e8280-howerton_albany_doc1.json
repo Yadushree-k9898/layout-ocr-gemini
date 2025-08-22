@@ -1,0 +1,15 @@
+{
+  "borrowers": [
+    "ELIZABETH HOWERTON AND TRAVIS HOWERTON",
+    "HOWERTON ELIZABETH",
+    "HOWERTON TRAVIS"
+  ],
+  "loan_amount": "475950.00",
+  "recording_date": "04/01/2025",
+  "recording_location": "Albany County, New York",
+  "lender_name": "US Mortgage Corporation",
+  "lender_nmls_id": "3901",
+  "broker_name": null,
+  "loan_originator_name": "William John Lane",
+  "loan_originator_nmls_id": "65175"
+}

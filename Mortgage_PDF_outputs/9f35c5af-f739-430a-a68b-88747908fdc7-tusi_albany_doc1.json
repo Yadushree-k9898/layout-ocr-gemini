@@ -1,0 +1,13 @@
+{
+  "borrowers": [
+    "Jared Tusi"
+  ],
+  "loan_amount": "427500.00",
+  "recording_date": "04/03/2025",
+  "recording_location": "Albany County, New York",
+  "lender_name": "M&T Bank, A Corporation",
+  "lender_nmls_id": "381076",
+  "broker_name": null,
+  "loan_originator_name": "Joseph Riedhammer",
+  "loan_originator_nmls_id": "55440"
+}
